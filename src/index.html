@@ -21,9 +21,9 @@
         background-image: url("https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
         background-size: cover;
         background-position: center;
-        display: flex; /* Add this to enable flexbox */
-        align-items: center; /* This centers the content vertically */
-        justify-content: center; /* This centers the content horizontally */
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       /* Overlay using CSS */
@@ -34,12 +34,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.3
-        ); /* Adjust the opacity for the overlay */
+        background-color: rgba(0, 0, 0, 0.3);
         z-index: 1;
       }
 
@@ -75,6 +70,10 @@
       .hero-content button:hover {
         background-color: #d97706;
       }
+
+      .cta-links {
+        margin-top: 2rem;
+      }
     </style>
   </head>
   <body class="bg-black text-white">
@@ -84,7 +83,10 @@
       class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 bg-transparent transition-all duration-300"
     >
       <!-- Left: Instagram -->
-      <a href="https://instagram.com" class="text-yellow-500 text-2xl">
+      <a
+        href="https://www.instagram.com/kalamatake/"
+        class="text-yellow-500 text-2xl"
+      >
         <i class="bx bxl-instagram-alt"></i>
       </a>
 
@@ -107,32 +109,72 @@
     <section class="hero-section">
       <!-- Hero Content -->
       <div class="hero-content">
-        <h1 class="reveal-h1 text-4xl md:text-6xl font-bold">
+        <h1 class="reveal-h1 text-7xl md:text-7xl font-bold">
           Welcome to Kalamata
         </h1>
         <p class="reveal-h1 mt-4 text-lg md:text-xl">
           Experience fine dining, redefined.
         </p>
-        <div class="text-center mt-1.5">
+        <div class="text-center cta-links">
           <a
             href="#"
-            class="text-white text-2xl font-bold uppercase tracking-wide"
-            >Reserve Table</a
+            class="text-white hover:text-yellow-600 font-bold uppercase tracking-wide relative custom-link"
           >
+            <span class="absolute -left-6 top-1/2 transform -translate-y-1/2"
+              >→</span
+            >
+            Reserve Table
+          </a>
           <div class="border-t border-gray-300 my-4 w-1/2 mx-auto"></div>
           <a
             href="#"
-            class="text-white text-2xl font-bold uppercase tracking-wide relative"
+            class="text-white hover:text-yellow-600 font-bold uppercase tracking-wide relative custom-link"
           >
-            View Menu
-            <span class="absolute -left-12 top-1/2 transform -translate-y-1/2"
-              >&rarr;</span
+            <span class="absolute -left-6 top-1/2 transform -translate-y-1/2"
+              >→</span
             >
+            View Menu
           </a>
         </div>
       </div>
     </section>
 
+    <section class="flex h-screen mt-50">
+      <div
+        class="w-1/2 bg-[url('https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center"
+      ></div>
+      <div
+        class="w-1/2 p-8 flex flex-col justify-center items-start text-white"
+      >
+        <h1 class="text-4xl font-bold mb-4">From Sunrise to Starlight</h1>
+        <p class="text-base mb-6">
+          Nestled high above the city on our cozy indoor floor, Botanica invites
+          you to indulge in an extraordinary dining experience. From the first
+          light of breakfast to the twilight of dinner, our curated menu
+          showcases the best in farm-to-table dishes.
+        </p>
+        <p class="text-base mb-6">
+          Step onto our lush green terrace and escape the urban buzz as you dine
+          amidst the foliage, enjoying the panoramic views of Nairobi. This
+          oasis in the sky is the perfect backdrop for a leisurely lunch or an
+          intimate dinner under the stars.
+        </p>
+        <div class="flex flex-col gap-2">
+          <a href="#" class="relative text-lg font-bold uppercase"
+            ><span class="absolute -left-6 top-1/2 transform -translate-y-1/2"
+              >←</span
+            >
+            Reserve Table</a
+          >
+          <a href="#" class="relative text-lg font-bold uppercase"
+            ><span class="absolute -left-6 top-1/2 transform -translate-y-1/2"
+              >→</span
+            >
+            View Menu</a
+          >
+        </div>
+      </div>
+    </section>
     <!-- Content -->
     <div class="h-[200vh] pt-24">
       <h1 class="text-3xl font-bold underline">Hello world!</h1>
@@ -158,7 +200,7 @@
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
                 entry.target.classList.add("active");
-                watcher.unobserve(entry.target); // Correct method, NOT unwatch
+                watcher.unobserve(entry.target);
               }
             });
           },
