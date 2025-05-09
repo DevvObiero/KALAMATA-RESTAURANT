@@ -573,6 +573,9 @@
   .pt-24 {
     padding-top: calc(var(--spacing) * 24);
   }
+  .pt-32 {
+    padding-top: calc(var(--spacing) * 32);
+  }
   .text-center {
     text-align: center;
   }
@@ -654,6 +657,9 @@
   }
   .text-yellow-500 {
     color: var(--color-yellow-500);
+  }
+  .text-yellow-600 {
+    color: var(--color-yellow-600);
   }
   .uppercase {
     text-transform: uppercase;
