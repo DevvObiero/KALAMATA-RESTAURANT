@@ -74,6 +74,42 @@
       .cta-links {
         margin-top: 2rem;
       }
+
+       .review-card {
+    position: relative;
+    width: 18rem;
+    height: 16rem;
+    background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&cs=tinysrgb&w=800');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  }
+
+  .review-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: left;
+  }
+
+  .review-text {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+  }
+
+  .review-name {
+    font-weight: bold;
+    color: #facc15; /* yellow-400 */
+    font-size: 1rem;
+  }
     </style>
   </head>
   <body class="bg-black text-white">
@@ -421,6 +457,74 @@
       </div>
     </div>
     </section>
+<section class="text-center py-16 bg-black text-white">
+  <h2 class="text-yellow-500 tracking-[0.3em] text-2xl mb-12">REVIEWS</h2>
+
+  <!-- REVIEW WRAPPER -->
+  <div class="flex flex-wrap justify-center gap-6 px-4">
+    <!-- REVIEW CARD -->
+    <div class="review-card">
+      <div class="review-overlay">
+        <p class="review-text">“Absolutely loved the ambiance and the food. A hidden gem in Nairobi!”</p>
+        <h4 class="review-name">— Sarah M.</h4>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-overlay">
+        <p class="review-text">“The rooftop view was stunning. Perfect spot for date night. Highly recommend.”</p>
+        <h4 class="review-name">— James K.</h4>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-overlay">
+        <p class="review-text">“Great service, creative cocktails, and the best desserts I’ve had in a while.”</p>
+        <h4 class="review-name">— Linda N.</h4>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="bg-black text-white py-16 px-8">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+    <!-- Left: Location -->
+    <div class="text-center md:text-left">
+      <h2 class="text-xl font-semibold mb-2">Restaurant Location</h2>
+      <p class="text-lg">7th floor, One Africa Place, Waiyaki Way, Nairobi.</p>
+    </div>
+
+    <!-- Center: Logo -->
+    <div class="flex justify-center">
+      <div class="text-center">
+        <img src="./kalamata-high-resolution-logo-transparent.png" alt="Botanica Logo" class="mx-auto mb-2 w-24 h-auto">
+        <h1 class="text-2xl font-bold tracking-wide">Kalamata</h1>
+        <p class="text-sm text-yellow-500 tracking-widest">KITCHEN &amp; GIN BAR</p>
+      </div>
+    </div>
+
+    <!-- Right: Newsletter -->
+    <div class="text-center md:text-right">
+      <h2 class="text-xl font-semibold mb-4">Subscribe To Our Newsletter!</h2>
+      <form class="flex flex-col md:flex-row justify-center md:justify-end items-center gap-2">
+        <div class="flex items-center bg-white rounded-md px-3 py-2 w-full md:w-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M2.94 6.94a1.5 1.5 0 011.06-.44h12a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-12a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 01.44-1.06zM4 8.5l6 3.75L16 8.5" />
+          </svg>
+          <input type="email" placeholder="Email" class="bg-transparent outline-none text-black w-full" />
+        </div>
+        <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-md">
+          SUBSCRIBE
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="mt-16 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+    <p class="mb-2 md:mb-0">WEBSITE BY OB</p>
+    <p>COPYRIGHT © 2025. ALL RIGHTS RESERVED.</p>
+  </div>
+</footer>
 
     <!-- Content -->
     <!-- <div class="h-[200vh] pt-24">
