@@ -144,7 +144,7 @@
         class="w-1/2 bg-[url('https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center"
       ></div>
       <div
-        class="w-1/2 p-8 flex flex-col justify-center items-start text-white"
+        class="w-1/2 p-8 flex flex-col justify-center items-start text-white mb-0"
       >
         <h1 class="text-4xl font-bold mb-4">From Sunrise to Starlight</h1>
         <p class="text-base mb-6">
@@ -159,19 +159,19 @@
           oasis in the sky is the perfect backdrop for a leisurely lunch or an
           intimate dinner under the stars.
         </p>
-        <div class="flex flex-col gap-2">
-          <a href="#" class="relative text-lg font-bold uppercase"
-            ><span class="absolute -left-6 top-1/2 transform -translate-y-1/2"
+        <div class="flex text-3xl flex-col gap-2 mt-10 ml-auto">
+          <a href="#" class="relative text-lg font-bold uppercase">
+            <span class="absolute -left-6 top-1/2 transform -translate-y-1/2"
               >←</span
             >
-            Reserve Table</a
-          >
-          <a href="#" class="relative text-lg font-bold uppercase"
-            ><span class="absolute -left-6 top-1/2 transform -translate-y-1/2"
+            Reserve Table
+          </a>
+          <a href="#" class="relative text-lg font-bold uppercase">
+            <span class="absolute -left-6 top-1/2 transform -translate-y-1/2"
               >→</span
             >
-            View Menu</a
-          >
+            View Menu
+          </a>
         </div>
       </div>
     </section>
@@ -186,9 +186,9 @@
 
       window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
-          navbar.classList.add("backdrop-blur-lg", "bg-white/10");
+          navbar.classList.add("backdrop-blur-lg", "bg-black/40"); // Changed to black
         } else {
-          navbar.classList.remove("backdrop-blur-lg", "bg-white/10");
+          navbar.classList.remove("backdrop-blur-lg", "bg-black/40"); // Also update here
         }
       });
 

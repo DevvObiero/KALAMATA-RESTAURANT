@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.5",
+    "food": "file:",
     "tailwindcss": "^4.1.5"
   }
 }
