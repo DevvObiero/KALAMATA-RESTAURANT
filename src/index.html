@@ -136,9 +136,11 @@
   </div>
 
   <!-- Right: Menu Button -->
-  <button id="menuToggle" class="text-white hover:text-yellow-600 text-4xl z-50 relative">
-    <i class="bx bx-menu" id="menuIcon"></i>
-  </button>
+ <button id="menuToggle" class="text-white hover:text-yellow-600 text-4xl z-50 relative">
+  <img id="menuIconOpen" src="./grid (2).png" alt="Open Menu" class="w-6 h-6" />
+  <img id="menuIconClose" src="./close (1).png" alt="Close Menu" class="w-6 h-6 hidden" />
+</button>
+
 </nav>
 
 <!-- SIDE MENU PANEL -->
@@ -545,7 +547,8 @@
           <p class="mb-2 hover:text-yellow-600 md:mb-0 cursor-pointer">
             WEBSITE BY OB
           </p>
-        </a>
+        </a><div> Icons made by <a href="https://www.flaticon.com/authors/joalfa" title="joalfa"> joalfa </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+        <div> Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry"> Kiranshastry </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
     <p>COPYRIGHT © 2025. ALL RIGHTS RESERVED.</p>
   </div>
 </footer>
@@ -586,25 +589,27 @@
 
         watchedElements.forEach((el) => watcher.observe(el));
       });
+const menuToggle = document.getElementById("menuToggle");
+const sideMenu = document.getElementById("sideMenu");
+const menuIconOpen = document.getElementById("menuIconOpen");
+const menuIconClose = document.getElementById("menuIconClose");
 
-       const menuToggle = document.getElementById("menuToggle");
-  const sideMenu = document.getElementById("sideMenu");
-  const menuIcon = document.getElementById("menuIcon");
+const toggleMenu = () => {
+  const isOpen = !sideMenu.classList.contains("translate-x-full");
 
-  const toggleMenu = () => {
-    const isOpen = !sideMenu.classList.contains("translate-x-full");
-    if (isOpen) {
-      sideMenu.classList.add("translate-x-full");
-      menuIcon.classList.remove("bx-x");
-      menuIcon.classList.add("bx-menu");
-    } else {
-      sideMenu.classList.remove("translate-x-full");
-      menuIcon.classList.remove("bx-menu");
-      menuIcon.classList.add("bx-x");
-    }
-  };
+  if (isOpen) {
+    sideMenu.classList.add("translate-x-full");
+    menuIconOpen.classList.remove("hidden");
+    menuIconClose.classList.add("hidden");
+  } else {
+    sideMenu.classList.remove("translate-x-full");
+    menuIconOpen.classList.add("hidden");
+    menuIconClose.classList.remove("hidden");
+  }
+};
 
-  menuToggle.addEventListener("click", toggleMenu);
+menuToggle.addEventListener("click", toggleMenu);
+
 
   // Close menu on ESC key
   document.addEventListener("keydown", (e) => {
