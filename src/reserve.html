@@ -140,12 +140,13 @@
       </div>
 
       <!-- Right: Menu Button -->
-      <button
+      <a
+        href="index.html"
         id="menuToggle"
         class="text-white hover:text-yellow-600 text-4xl z-50 relative"
       >
-        <i class="bx bx-menu" id="menuIcon"></i>
-      </button>
+        HOME
+      </a>
     </nav>
 
     <!-- SIDE MENU PANEL -->
@@ -200,6 +201,20 @@
           name="email"
           id="email"
           required
+          class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-500"
+        />
+      </div>
+      <div>
+        <label for="phone" class="block mb-1 text-yellow-500"
+          >Phone Number</label
+        >
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          required
+          pattern="[0-9+ ]{10,15}"
+          placeholder="+254712345678"
           class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-500"
         />
       </div>
