@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        position: relative;
+        height: 100vh;
+        background-image: url("https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Overlay using CSS */
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+
+      /* Hero Content */
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        padding: 0 1rem;
+      }
+
+      .hero-content h1 {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+
+      .hero-content p {
+        margin-top: 1rem;
+        font-size: 1.25rem;
+      }
+
+      .hero-content button {
+        margin-top: 1.5rem;
+        padding: 1rem 1.5rem;
+        background-color: #f59e0b;
+        color: black;
+        font-weight: bold;
+        border-radius: 0.375rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .hero-content button:hover {
+        background-color: #d97706;
+      }
+
+      .cta-links {
+        margin-top: 2rem;
+      }
+
+      .review-card {
+        position: relative;
+        width: 18rem;
+        height: 16rem;
+        background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=compress&cs=tinysrgb&w=800");
+        background-size: cover;
+        background-position: center;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+      }
+
+      .review-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.85),
+          rgba(0, 0, 0, 0.4)
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem;
+        text-align: left;
+      }
+
+      .review-text {
+        font-size: 1rem;
+        color: #fff;
+        margin-bottom: 1.25rem;
+        font-style: italic;
+      }
+
+      .review-name {
+        font-weight: bold;
+        color: #facc15; /* yellow-400 */
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- NAVBAR -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 bg-transparent transition-all duration-300"
+    >
+      <!-- Left: Instagram -->
+      <a
+        href="https://www.instagram.com/kalamatake/"
+        class="text-white hover:text-yellow-600 text-4xl"
+      >
+        <i class="bx bxl-instagram-alt"></i>
+      </a>
+
+      <!-- Center: Logo -->
+      <div class="flex-grow flex justify-center items-center">
+        <img
+          src="./kalamata-high-resolution-logo-transparent.png"
+          alt="Logo"
+          class="h-12 w-auto"
+        />
+      </div>
+
+      <!-- Right: Menu Button -->
+      <button
+        id="menuToggle"
+        class="text-white hover:text-yellow-600 text-4xl z-50 relative"
+      >
+        <i class="bx bx-menu" id="menuIcon"></i>
+      </button>
+    </nav>
+
+    <!-- SIDE MENU PANEL -->
+    <div
+      id="sideMenu"
+      class="fixed top-0 right-0 h-full w-full lg:w-1/2 bg-black text-white transform translate-x-full transition-transform duration-500 z-40 flex flex-col items-start p-8 gap-6"
+    >
+      <nav class="mt-8 w-full flex flex-col gap-6 text-2xl">
+        <a href="breakfast.pdf" target="_blank" class="menu-link"
+          >Breakfast Menu</a
+        >
+        <a href="drinks.pdf" target="_blank" class="menu-link">Drinks Menu</a>
+        <a href="food.pdf" target="_blank" class="menu-link">Food Menu</a>
+        <a href="dessert.pdf" target="_blank" class="menu-link">Dessert Menu</a>
+        <a href="#reserve" class="menu-link">Reserve Table</a>
+      </nav>
+    </div>
+
+    <form
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      class="max-w-xl mx-auto mt-30 p-6 bg-black text-white space-y-4 rounded-lg"
+    >
+      <!-- Required Access Key -->
+      <input
+        type="hidden"
+        name="access_key"
+        value="4d8d6008-aad1-4dda-906e-24c8502cf9f9"
+      />
+
+      <!-- Form Fields -->
+      <div>
+        <label for="name" class="block mb-1 text-yellow-500">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-500"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block mb-1 text-yellow-500">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-500"
+        />
+      </div>
+
+      <div>
+        <label for="date" class="block mb-1 text-yellow-500">Date</label>
+        <input
+          type="date"
+          name="date"
+          id="date"
+          required
+          class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-500"
+        />
+      </div>
+
+      <div>
+        <label for="time" class="block mb-1 text-yellow-500">Time</label>
+        <input
+          type="time"
+          name="time"
+          id="time"
+          required
+          class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-500"
+        />
+      </div>
+
+      <div>
+        <label for="guests" class="block mb-1 text-yellow-500"
+          >No. of Guests</label
+        >
+        <input
+          type="number"
+          name="guests"
+          id="guests"
+          required
+          min="1"
+          max="20"
+          class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-500"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="bg-yellow-500 text-black font-bold px-6 py-2 rounded hover:bg-yellow-600 transition"
+      >
+        Book Now
+      </button>
+    </form>
+
+    <footer class="bg-black text-white py-16 px-8">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center"
+      >
+        <!-- Left: Location -->
+        <div class="text-center md:text-left">
+          <h2 class="text-xl font-semibold mb-2">Restaurant Location</h2>
+          <p class="text-lg">
+            7th floor, One Africa Place, Waiyaki Way, Nairobi.
+          </p>
+        </div>
+
+        <!-- Center: Logo -->
+        <div class="flex justify-center">
+          <div class="text-center">
+            <img
+              src="./kalamata-high-resolution-logo-transparent.png"
+              alt="Botanica Logo"
+              class="mx-auto mb-2 w-24 h-auto"
+            />
+            <h1 class="text-2xl font-bold tracking-wide">Kalamata</h1>
+            <p class="text-sm text-yellow-500 tracking-widest">
+              KITCHEN &amp; GIN BAR
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Newsletter -->
+        <div class="text-center md:text-right">
+          <h2 class="text-xl font-semibold mb-4">
+            Subscribe To Our Newsletter!
+          </h2>
+          <form
+            class="flex flex-col md:flex-row justify-center md:justify-end items-center gap-2"
+          >
+            <div
+              class="flex items-center bg-white rounded-md px-3 py-2 w-full md:w-auto"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-black mr-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M2.94 6.94a1.5 1.5 0 011.06-.44h12a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-12a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 01.44-1.06zM4 8.5l6 3.75L16 8.5"
+                />
+              </svg>
+              <input
+                type="email"
+                placeholder="Email"
+                class="bg-transparent outline-none text-black w-full"
+              />
+            </div>
+            <button
+              type="submit"
+              class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-md"
+            >
+              SUBSCRIBE
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div
+        class="mt-16 border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"
+      >
+        <p class="mb-2 md:mb-0">WEBSITE BY OB</p>
+        <p>COPYRIGHT © 2025. ALL RIGHTS RESERVED.</p>
+      </div>
+    </footer>
+
+    <!-- Content -->
+    <!-- <div class="h-[200vh] pt-24">
+      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    </div> -->
+
+    <!-- Frosted Scroll Script -->
+    <script>
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("backdrop-blur-lg", "bg-black/40"); // Changed to black
+        } else {
+          navbar.classList.remove("backdrop-blur-lg", "bg-black/40"); // Also update here
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const watchedElements = document.querySelectorAll(".reveal-h1");
+
+        const watcher = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                watcher.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1
+          }
+        );
+
+        watchedElements.forEach((el) => watcher.observe(el));
+      });
+
+      const menuToggle = document.getElementById("menuToggle");
+      const sideMenu = document.getElementById("sideMenu");
+      const menuIcon = document.getElementById("menuIcon");
+    </script>
+  </body>
+</html>
