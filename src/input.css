@@ -34,3 +34,20 @@ body {
 .reveal-h1.active {
   animation: revealH1 0.8s ease-out forwards;
 }
+
+.menu-card {
+  @apply relative w-60 h-72 bg-cover bg-center rounded overflow-hidden shadow-lg;
+}
+
+.menu-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* Custom dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-card .overlay h3 {
+  @apply text-xl font-medium text-white;
+}
