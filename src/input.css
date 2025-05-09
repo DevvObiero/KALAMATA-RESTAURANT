@@ -36,7 +36,7 @@ body {
 }
 
 .menu-card {
-  @apply relative w-60 h-72 bg-cover bg-center rounded overflow-hidden shadow-lg;
+  @apply relative w-60 h-72 bg-cover bg-center  overflow-hidden shadow-lg;
 }
 
 .menu-card .overlay {
