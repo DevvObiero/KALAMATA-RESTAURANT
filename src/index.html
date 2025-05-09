@@ -115,31 +115,47 @@
   <body class="bg-black text-white">
     <!-- NAVBAR -->
     <nav
-      id="navbar"
-      class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 bg-transparent transition-all duration-300"
-    >
-      <!-- Left: Instagram -->
-      <a
-        href="https://www.instagram.com/kalamatake/"
-        class="text-yellow-500 text-2xl"
-      >
-        <i class="bx bxl-instagram-alt"></i>
-      </a>
+  id="navbar"
+  class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 bg-transparent transition-all duration-300"
+>
+  <!-- Left: Instagram -->
+  <a
+    href="https://www.instagram.com/kalamatake/"
+    class="text-white hover:text-yellow-600 text-4xl"
+  >
+    <i class="bx bxl-instagram-alt"></i>
+  </a>
 
-      <!-- Center: Logo -->
-      <div class="flex-grow flex justify-center items-center">
-        <img
-          src="./kalamata-high-resolution-logo-transparent.png"
-          alt="Logo"
-          class="h-12 w-auto"
-        />
-      </div>
+  <!-- Center: Logo -->
+  <div class="flex-grow flex justify-center items-center">
+    <img
+      src="./kalamata-high-resolution-logo-transparent.png"
+      alt="Logo"
+      class="h-12 w-auto "
+    />
+  </div>
 
-      <!-- Right: Menu icon -->
-      <button class="text-yellow-500 text-2xl">
-        <i class="bx bx-menu"></i>
-      </button>
-    </nav>
+  <!-- Right: Menu Button -->
+  <button id="menuToggle" class="text-white hover:text-yellow-600 text-4xl z-50 relative">
+    <i class="bx bx-menu" id="menuIcon"></i>
+  </button>
+</nav>
+
+<!-- SIDE MENU PANEL -->
+<div
+  id="sideMenu"
+  class="fixed top-0   right-0 h-full w-full lg:w-1/2 bg-black text-white transform translate-x-full transition-transform duration-500 z-40 flex flex-col items-start p-8 gap-6"
+>
+  <nav class="mt-8 w-full flex flex-col gap-6 text-2xl">
+    <a href="breakfast.pdf" target="_blank" class="menu-link">Breakfast Menu</a>
+    <a href="drinks.pdf" target="_blank" class="menu-link">Drinks Menu</a>
+    <a href="food.pdf" target="_blank" class="menu-link">Food Menu</a>
+    <a href="dessert.pdf" target="_blank" class="menu-link">Dessert Menu</a>
+    <a href="#reserve" class="menu-link">Reserve Table</a>
+  </nav>
+</div>
+
+
 
     <!-- HERO / LANDING SECTION -->
     <section class="hero-section">
@@ -562,6 +578,34 @@
 
         watchedElements.forEach((el) => watcher.observe(el));
       });
+
+       const menuToggle = document.getElementById("menuToggle");
+  const sideMenu = document.getElementById("sideMenu");
+  const menuIcon = document.getElementById("menuIcon");
+
+  const toggleMenu = () => {
+    const isOpen = !sideMenu.classList.contains("translate-x-full");
+    if (isOpen) {
+      sideMenu.classList.add("translate-x-full");
+      menuIcon.classList.remove("bx-x");
+      menuIcon.classList.add("bx-menu");
+    } else {
+      sideMenu.classList.remove("translate-x-full");
+      menuIcon.classList.remove("bx-menu");
+      menuIcon.classList.add("bx-x");
+    }
+  };
+
+  menuToggle.addEventListener("click", toggleMenu);
+
+  // Close menu on ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      sideMenu.classList.add("translate-x-full");
+      menuIcon.classList.remove("bx-x");
+      menuIcon.classList.add("bx-menu");
+    }
+  });
     </script>
   </body>
 </html>

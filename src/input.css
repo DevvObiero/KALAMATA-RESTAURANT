@@ -51,3 +51,28 @@ body {
 .menu-card .overlay h3 {
   @apply text-xl font-medium text-white;
 }
+
+. .menu-link {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #facc15; /* yellow-400 */
+  transition: width 0.3s ease;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+
+.menu-link:hover {
+  color: #facc15;
+}
