@@ -253,6 +253,9 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
+  .mt-13 {
+    margin-top: calc(var(--spacing) * 13);
+  }
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
@@ -514,9 +517,6 @@
   }
   .bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/7594969\/pexels-photo-7594969\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1260\&h\=750\&dpr\=2\'\)\] {
     background-image: url('https://images.pexels.com/photos/7594969/pexels-photo-7594969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-  }
-  .bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/18126715\/pexels-photo-18126715\/free-photo-of-pizza-in-oven\.jpeg\?auto\=compress\&cs\=tinysrgb\&w\=1260\&h\=750\&dpr\=2\'\)\] {
-    background-image: url('https://images.pexels.com/photos/18126715/pexels-photo-18126715/free-photo-of-pizza-in-oven.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
   }
   .bg-cover {
     background-size: cover;
