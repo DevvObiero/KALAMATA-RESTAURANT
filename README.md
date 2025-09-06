@@ -3,7 +3,7 @@
 A responsive and clean restaurant website built with **HTML**, **CSS**, and **Tailwind CSS**.  
 The design is simple, classy, and user-friendly, showcasing the restaurant’s menu, services, and contact details with a modern touch.
 
-## ✨ Features
+✨ Features
 - Fully responsive design for all screen sizes  
 - Classy and clean UI using Tailwind CSS utilities  
 - Sections for Home, Menu, About, and Contact  
